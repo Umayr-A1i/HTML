@@ -170,5 +170,21 @@ function openMenu(evt, menuName) {
   }
   document.getElementById("myLink").click();
 </script>
+
+<div id="cookie-banner" style="display: none;">
+  This website uses cookies to ensure you get the best experience. 
+  <button id="accept-cookies">Accept</button>
+</div>
+<script>
+  document.getElementById('accept-cookies').onclick = function() {
+    document.cookie = "consent=true; path=/";
+    document.getElementById('cookie-banner').style.display = 'none';
+  };
+  if (!document.cookie.includes('consent=true')) {
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+</script>
+
+  
 </body>
 </html>
